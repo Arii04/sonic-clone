@@ -13,13 +13,35 @@ public class JumpAction : PlayerAction
             Jump();
         }
     }
+    void OnEnable()
+    {
+        playerPhysics.onGroundEnter += OnGroundEnter;
+    }
+    void OnGroundEnter()
+    {
+        currentJumps = jumps;
+    }
+    void OnDisable()
+    {
+        playerPhysics.onGroundExit -= OnGroundEnter;
+    }
+   
+    [SerializeField] int jumps;
+    [SerializeField] float jumpForce;
+    [SerializeField] float airJumpForce;
+    int currentJumps;
+    public void Jump()
+    {
 
+      
+        
+        if (currentJumps <= 0) return;
 
-        [SerializeField] float jumpForce;
-        void Jump()
-        {
-            if (!groundInfo.ground) return;
-            RB.linearVelocity = (Vector3.up * jumpForce) + playerPhysics.horizontalVelocity;
-        }
+        currentJumps--;
+
+        float jumpForce = groundInfo.ground ? this.jumpForce : airJumpForce;
+
+        RB.linearVelocity = (groundInfo.normal * jumpForce) + playerPhysics.horizontalVelocity;
+    }
     
 }

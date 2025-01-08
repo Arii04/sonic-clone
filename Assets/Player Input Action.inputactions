@@ -1,14 +1,14 @@
 {
-    "name": "Player Input Actions",
+    "name": "Player Input Action",
     "maps": [
         {
-            "name": "default",
-            "id": "72829674-8e24-48a1-b5c9-f3124386fa16",
+            "name": "Player",
+            "id": "870d7e0d-9f4e-4dac-83b9-ff13a222f334",
             "actions": [
                 {
                     "name": "Move",
                     "type": "Value",
-                    "id": "93556f5c-55dc-4709-80d9-c9e19c245d8f",
+                    "id": "177c7c2d-394c-43b1-97d3-c195f2f10145",
                     "expectedControlType": "Stick",
                     "processors": "",
                     "interactions": "",
@@ -17,7 +17,7 @@
                 {
                     "name": "Jump",
                     "type": "Button",
-                    "id": "66d6bf6f-977e-413d-85e1-79702a5b07cf",
+                    "id": "b19dcc1b-69c9-4713-b007-f50857e7a45c",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -26,19 +26,8 @@
             ],
             "bindings": [
                 {
-                    "name": "",
-                    "id": "62f4ae6b-19e2-434b-8a9d-e43c0820ad04",
-                    "path": "<Gamepad>/leftStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "Keyoarad and Mouse",
-                    "id": "0103f5d1-9e24-49a5-b1a1-b36bbe22d788",
+                    "name": "2D Vector",
+                    "id": "0d7c4aa5-b121-4574-85e5-0f9b62bad8e5",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -49,66 +38,77 @@
                 },
                 {
                     "name": "up",
-                    "id": "91de0e39-9da9-435e-a5dc-578c445827b4",
+                    "id": "3582b6db-80d6-4596-a495-526fbffb567d",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard and mouse",
+                    "groups": ";KBM",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "60b54fbc-4d34-4734-86ca-a01714a2cc0f",
+                    "id": "f1b61948-f0fe-457f-a419-402f0f9215e0",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard and mouse",
+                    "groups": ";KBM",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "211a4234-c289-4316-b0ab-fb9c3a8d2aeb",
+                    "id": "9b12967c-6c78-43a4-a842-6b78461e73d2",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard and mouse",
+                    "groups": ";KBM",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "8d2ab67d-21a6-4194-9230-85960c49ca44",
+                    "id": "113794dc-f465-44e4-a806-ae8db2662939",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard and mouse",
+                    "groups": ";KBM",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "",
-                    "id": "c88efac1-7104-43a0-abd3-be61f8348842",
+                    "id": "24bca223-2c33-4e7d-bd8e-e69e3f230fa3",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Controller",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b3594b27-e9c5-4903-93b4-48039d3156f8",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard and mouse",
+                    "groups": ";KBM",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "467a06ab-928a-416f-8771-259f9c14ce2c",
+                    "id": "8b3cb204-090b-4f93-ae56-cc5ee34dcf34",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Gamepad",
+                    "groups": ";Controller",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -118,8 +118,8 @@
     ],
     "controlSchemes": [
         {
-            "name": "Keyboard and mouse",
-            "bindingGroup": "Keyboard and mouse",
+            "name": "KBM",
+            "bindingGroup": "KBM",
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
@@ -134,8 +134,8 @@
             ]
         },
         {
-            "name": "Gamepad",
-            "bindingGroup": "Gamepad",
+            "name": "Controller",
+            "bindingGroup": "Controller",
             "devices": [
                 {
                     "devicePath": "<Gamepad>",

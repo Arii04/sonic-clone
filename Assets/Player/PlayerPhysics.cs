@@ -16,6 +16,7 @@ public class PlayerPhysics : MonoBehaviour
 
     public Action onPlayerPhysicsUpdate;
 
+    public float speed => horizontalVelocity.magnitude;
 
     void FixedUpdate()
     {
@@ -67,6 +68,9 @@ public class PlayerPhysics : MonoBehaviour
     }
 
     [HideInInspector] public GroundInfo groundInfo;
+
+    public Action onGroundEnter;
+    public Action onGroundExit;
     void Ground()
     {
 
@@ -81,7 +85,27 @@ public class PlayerPhysics : MonoBehaviour
 
         Vector3 normal = ground ? hit.normal: Vector3.up;
 
-        groundInfo = new GroundInfo { point = point, normal = normal, ground = ground };
+        if (ground != groundInfo.ground)
+        {
+            if (ground) 
+            {
+                onGroundEnter?.Invoke(); 
+            }
+            else
+
+            {
+                onGroundExit?.Invoke();
+            }
+
+        }
+        
+
+        groundInfo = new () 
+        {   
+            point = point,
+            normal = normal,
+            ground = ground 
+        };
     }
 
 
